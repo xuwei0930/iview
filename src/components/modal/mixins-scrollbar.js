@@ -14,7 +14,8 @@ export default {
             }
         },
         checkMaskInVisible () {
-            let masks = document.getElementsByClassName('ivu-modal-mask') || [];
+            //抽屉也是共用的所以要加上抽屉上再弹modal的兼容，否则在抽屉上关闭modal会出现滚动条
+            let masks = document.querySelectorAll('.ivu-modal-mask,.ivu-drawer-mask') || [];
             return Array.from(masks).every(m => m.style.display === 'none' || m.classList.contains('fade-leave-to'));
         },
         setScrollBar () {
