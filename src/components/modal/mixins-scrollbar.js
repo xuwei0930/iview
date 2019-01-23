@@ -36,5 +36,8 @@ export default {
                 this.resetScrollBar();
             }
         }
+    },
+    destroyed () {
+        this.removeScrollEffect();
     }
 };
